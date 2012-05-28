@@ -1,0 +1,27 @@
+{
+	"name":		"Hypercube",
+	"version":		"0.1",
+	"description":	"prototype implementation of a concept for a modern browser's user interface",
+	"icons": {
+		"16":	"res/images/logo16.png",
+		"64":	"res/images/logo64.png",
+		"128":	"res/images/logo128.png"
+	},
+	"app": {
+		"launch": {
+			"local_path": "main.htm"
+		}
+	},
+	"permissions": [
+		"http://*/*",
+		"file://*/*",
+		"https://*/*",
+		"bookmarks",
+		"chrome://favicon/",
+		"history",
+		"unlimitedStorage",
+		"tabs",
+		"<all_urls>"
+	],
+	"offline_enabled": true
+}

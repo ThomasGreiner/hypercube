@@ -1,0 +1,319 @@
+/* 
+ * Copyright 2012 Thomas Greiner
+ * thomas@greinr.com
+ *
+ * The contents of this file are subject to the Artistic License 2.0.
+ * The full text can be found in the LICENSE.txt file and at
+ * http://www.opensource.org/licenses/artistic-license-2.0
+ */
+html {
+	width:	100%;
+	height:	100%;
+}
+
+body {
+	position:			absolute;
+	top:					8px;
+	left:					8px;
+	right:				8px;
+	bottom:				8px;
+	margin:				0px;
+	color:				#333;
+	font-family:		Arial, Helvetica, sans-serif;
+	font-size:			13px;
+	border:				3px solid rgba(0,0,50,1);
+	border-radius:	2px;
+	-webkit-user-select:	none;
+	z-index:		-1;
+}
+
+.hidden {
+	display:		none;
+}
+
+header {
+	position:	relative;
+	width:		100%;
+	height:		46px;
+}
+
+header .element, .node {
+	height:		22px;
+	padding:	1px;
+	border:		2px solid #555;
+	border-radius:	5px;
+	background-color:	rgba(255, 255, 255, 0.85);
+	box-shadow:	2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+header .element {
+	cursor:		pointer;
+}
+
+header>progress {
+	position:	absolute;
+	top:			0px;
+	left:			0px;
+	right:		0px;
+	width:		auto;
+	height:		5px;
+}
+
+header>canvas {
+	width:		100%;
+	height:		100%;
+	z-index:	11;
+}
+
+header>nav>canvas {
+	cursor:		pointer;
+	position:	absolute;
+	top:			-51px;
+	left:			-51px;
+	width:		100px;
+	height:		100px;
+	box-shadow:	0px 2px 2px rgba(0, 0, 0, 0.2);
+	-webkit-transform:	rotate(-45deg);
+	z-index:	50;
+}
+
+#addressbar #addressbar-show {
+	display:		none;
+}
+#addressbar.show #addressbar-show {
+	display:		inline;
+}
+
+#addressbar #addressbar-input {
+	display:		inline;
+}
+#addressbar.show #addressbar-input {
+	display:		none;
+}
+
+#addressbar #addressbar-show, #addressbar #addressbar-input {
+	position:	absolute;
+	top:			18px;
+	left:			0px;
+}
+
+#addressbar .element {
+	color:				#333;
+	margin:				0px;
+	padding-right:	10px;
+	padding-left:		50px;
+}
+
+#addressbar #addressbar-show div {
+	display:		inline-block;
+	line-height:23px;
+}
+
+#addressbar #addressbar-show #addressbar-box {
+	padding-left:	51px;
+}
+#addressbar #addressbar-show #addressbar-box span {
+	color:			#888;
+}
+
+#addressbar #addressbar-show #addressbar-info {
+	width:		22px;
+	height:		22px;
+	border:		1px solid black;
+}
+
+header>nav>#toolbar {
+	position:	absolute;
+	top:			18px;
+	right:		0px;
+}
+
+header>nav>#toolbar>.element {
+	display:		inline-block;
+	width:		22px;
+	margin-right:	10px;
+}
+header>nav>#toolbar>.element:hover {
+	box-shadow:
+		inset 2px 2px 5px rgba(30,30,80,0.85),
+		inset -2px -2px 5px rgba(30,30,80,0.85);
+}
+header>nav>#toolbar>.element>img {
+	margin:	1px;
+	width:	20px;
+	height:	20px;
+}
+
+section#content {
+	position:			absolute;
+	top:					45px;
+	left:					22px;
+	right:				0px;
+	bottom:				0px;
+	z-index:			-1;
+}
+
+section#content>iframe {
+	width:	100%;
+	height:	100%;
+	border:	0px;
+}
+
+section#visualizer {
+	position:		absolute;
+	/*top:				57px;*/
+	top:				0px;
+	left:				11px;
+	right:			0px;
+	bottom:			0px;
+	overflow:		hidden;
+	z-index:		20;
+}
+
+section#visualizer canvas#visualizer_bg {
+	position:	absolute;
+	top:		0px;
+	left:		0px;
+	width:		100%;
+	height:		100%;
+	z-index:	-1;
+	background-image:
+	/*
+	-webkit-linear-gradient(top,
+		rgba(255,255,255,1) 0%,
+		rgba(255,255,255,0) 1%
+	),
+	*/
+	-webkit-linear-gradient(left,
+		rgba(255,255,255,0) 0%,
+		rgba(30,30,80,0.3) 5%,
+		rgba(30,30,80,0.7) 10%,
+		rgba(30,30,80,0.80) 15%,
+		rgba(30,30,80,0.85) 100%
+	);
+}
+
+section#visualizer button#hide_visualizer {
+	cursor:		pointer;
+	position:	absolute;
+	top:			2px;
+	right:		2px;
+	font-size:	20px;
+	font-weight:	bold;
+	color:		white;
+	border:		none;
+	background:	none;
+}
+section#visualizer button#hide_visualizer:hover {
+	background-image:	-webkit-radial-gradient(center center, ellipse cover, #CCC, rgba(30,30,80,0));
+}
+
+section#tabs, section#tasks {
+	position:	absolute;
+	top:		46px;
+	bottom:		0px;
+	z-index:	30;
+}
+
+section#tabs .list, section#tasks .list {
+	width:		100%;
+	padding-top:	34px;
+}
+
+section#tabs>canvas {
+	position:	absolute;
+	width:		22px;
+	height:		100%;
+	z-index:	-1;
+}
+
+section#tasks {
+	right:		11px;
+}
+
+.node {
+	cursor:	default;
+	display:	block;
+	margin-top:		5px;
+	border-radius:	5px;
+	background-color:		rgba(255,255,255,0.85);
+	background-repeat:	no-repeat;
+	background-size:		16px 16px;
+	background-position:	center;
+	-webkit-user-select:	none;
+}
+.node:hover, .cluster:hover {
+	/*box-shadow:	inset -5px 0px 5px rgba(30,30,80,0.85);*/
+	box-shadow:	0px 0px 10px white;
+}
+.node.active {
+	box-shadow:	inset -10px 0px 10px rgba(30,30,80,0.85);
+}
+.node.small {
+	width:	22px;
+}
+.node.medium {
+}
+.node.large {
+}
+.node.left {
+	border-left:	0px;
+	border-radius: 0px 5px 5px 0px;
+}
+.node.right {
+	border-right:	0px;
+	border-radius:	5px 0px 0px 5px;
+}
+.node.center {
+}
+.node.movable {
+	position:		absolute;
+	left:				100px;
+}
+.node-title, .cluster-title {
+	display:		none;
+	font-weight:	bold;
+	line-height:	22px;
+	text-shadow:
+		-1px -1px 0 #fff,
+		1px -1px 0 #fff,
+		-1px 1px 0 #fff,
+		1px 1px 0 #fff;
+	-webkit-user-select:	none;
+}
+.node.active .node-title {
+	display:	inline;
+}
+.node:hover .node-title, .node.active:hover .node-title, .cluster:hover .cluster-title {
+	display:		inline;
+}
+.node.left .node-title, .node.center .node-title {
+	margin-left:	30px;
+}
+.node.right .node-title {
+	margin-right:	30px;
+}
+.node img {
+	margin-top:	3px;
+	margin-left:	2px;
+}
+
+.cluster {
+	cursor:				default;
+	position:			absolute;
+	display:				block;
+	top:					5px;
+	left:					100px;
+	border:				2px solid rgba(255,255,255,0.55);
+	border-radius:	30px;
+	background-color:		rgba(255,255,255,0.3);
+	background-repeat:	no-repeat;
+	background-size:		32px 32px;
+	background-position:	center;
+	
+	width:			50px;
+	height:			50px;
+}
+.cluster-title {
+	margin-left:	60px;
+	line-height:	50px;
+}

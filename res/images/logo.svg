@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ * Copyright 2012 Thomas Greiner
+ * thomas@greinr.com
+ *
+ * The contents of this file are subject to the Artistic License 2.0.
+ * The full text can be found in the LICENSE.txt file and at
+ * http://www.opensource.org/licenses/artistic-license-2.0
+-->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns="http://www.w3.org/2000/svg"
+   width="500"
+   height="500"
+   preserveAspectRatio="xMinYMin meet"
+   viewBox="0 0 500 500"
+   id="svg2"
+   version="1.1">
+  <defs
+     id="defs4">
+  </defs>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="background"
+     style="display:inline">
+    <rect
+		id="out_background_center"
+		x="150"
+		y="50"
+		width="300"
+		height="300"
+		style="opacity:0.25;fill:#0000ff;fill-opacity:1;fill-rule:evenodd;stroke:none;display:inline" />
+    <path
+		id="out_background_left"
+		d="m 150,50 0,300 -100,100 0,-300"
+		style="opacity:0.25;fill:#0000ff;fill-opacity:1;stroke:none;display:inline" />
+    <path
+		id="out_background_bottom"
+		d="m 50,450 100,-100 300,0 -100,100 z"
+		style="opacity:0.25;fill:#0000ff;fill-opacity:1;stroke:none;display:inline" />
+  </g>
+  <g
+     id="middleground"
+     style="display:inline">
+    <path
+		id="middleground_top_left"
+		d="M 50,150 155,195 195,155 150,50 z"
+		style="opacity:0.5;fill:#000032;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+		id="middleground_back_top"
+		d="m 151,50 45,105 149,0 105,-105 z"
+		style="opacity:0.5;fill:#000032;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+		id="middleground_front_top"
+		d="m 50,150 105,45 150,0 45,-45 z"
+		style="opacity:0.5;fill:#000032;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+		id="middleground_front_bottom"
+		d="M 155,345 50,450 350,450 305,345 z"
+		style="opacity:0.5;fill:#000032;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+		id="middleground_bottom_right"
+		d="M 305,345 350,450 450,350 345,305 z"
+		style="opacity:0.5;fill:#000032;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+		id="middleground_front_right"
+		d="m 350,150 -45,45 0,150 45,105 z"
+		style="fill:#aaaaff;fill-opacity:1;stroke:none;display:inline" />
+  </g>
+  <g
+     id="foreground"
+     style="display:inline">
+    <rect
+		id="out_foreground_center"
+		x="50"
+		y="150"
+		width="300"
+		height="300"
+		style="opacity:0.5;fill:#000032;fill-opacity:1;fill-rule:evenodd;stroke:none;display:inline" />
+    <path
+		id="out_foreground_top"
+		d="M 50,150 150,50 450,50 350,150 z"
+		style="opacity:0.5;fill:#000032;fill-opacity:1;stroke:none;display:inline">
+		<!--
+		<animate
+			attributeName="d"
+			from="M 50.857143,149.85714 151.57142,51.285709 449.42856,50.571429 350.14285,150.57143 z"
+			to="M 50.857143,139.85714 151.57142,41.285709 449.42856,40.571429 350.14285,140.57143 z"
+			begin="0"
+			dur="2"
+			repeatCount="indefinite" />
+		<animate
+			attributeName="d"
+			from="M 50.857143,139.85714 151.57142,41.285709 449.42856,40.571429 350.14285,140.57143 z"
+			to="M 50.857143,149.85714 151.57142,51.285709 449.42856,50.571429 350.14285,150.57143 z"
+			begin="2"
+			dur="2"
+			repeatCount="indefinite" />
+		-->
+	</path>
+    <path
+		id="out_foreground_right"
+		d="m 450,50 0,300 -100,100 0,-300 z"
+		style="opacity:0.5;fill:#000032;fill-opacity:1;stroke:none;display:inline" />
+  </g>
+  <g
+     id="inner background"
+     style="display:inline">
+    <rect
+		id="in_background_center"
+		x="195"
+		y="155"
+		width="150"
+		height="150"
+		style="opacity:0.25;fill:#ffffff;stroke:none;display:inline" />
+    <path
+		id="in_background_left"
+		d="m 155,195 40,-40 0,150 -40,40 z"
+		style="opacity:0.25;fill:#ffffff;stroke:none;display:inline" />
+    <path
+		id="in_background_bottom"
+		d="m 155,345 40,-40 150,0 -40,40 z"
+		style="opacity:0.13;fill:#ffffff;stroke:none;display:inline" />
+  </g>
+  <g
+     id="inner foreground"
+     style="display:inline">
+    <rect
+		id="in_foreground_center"
+		x="155"
+		y="195"
+		width="150"
+		height="150"
+		style="opacity:0.5;fill:#ffffff;stroke:none" />
+    <path
+		id="in_foreground_top"
+		d="m 155,195 40,-40 150,0 -40,40 z"
+		style="opacity:0.25;fill:#ffffff;stroke:none" />
+    <path
+		id="in_foreground_right"
+		d="m 305,195 40,-40 0,150 -40,40 z"
+		style="opacity:0.25;fill:#ffffff;stroke:none" />
+  </g>
+</svg>
