@@ -58,3 +58,4 @@ var Main = new (function() {
 		GET("loadprogress").value = val;
 	}
 })();
+document.addEventListener("DOMContentLoaded", Main.init, false);

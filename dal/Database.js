@@ -59,7 +59,6 @@ var Database = new (function() {
 				args,
 				function(tx, rs) {
 					node.id = rs.insertId;
-					console.log("inserted", node, node.id, nData);
 				},
 				Database.onError
 			);

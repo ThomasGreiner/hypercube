@@ -13,6 +13,9 @@ var Visualizer = new (function() {
 	
 	this.init = function(html) {
 		_html = html;
+
+		var hideBtn = GET("hide_visualizer");
+		hideBtn.addEventListener("click", Visualizer.hide, false);
 		
 		Database.getNodes(null, this.renderNodes);
 

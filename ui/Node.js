@@ -16,7 +16,6 @@ var Node = (function(id, name, url) {
 	var _isMovable;
 
 	this.__defineSetter__("id", function(id) {
-		console.log("set", id);
 		_html.id = id;
 		_id = id;
 	});
