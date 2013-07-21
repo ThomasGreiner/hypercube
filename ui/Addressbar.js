@@ -20,6 +20,7 @@ var Addressbar = new (function() {
   var _box;
   var _info;
   var _input;
+  var _reURL = /^(([^:]+):(\/\/)?)?(([^\.]+\.)*)([^\/\?]+)(\/.*)?$/;
   
   this.__defineGetter__("input", function() {return _input;});
   
@@ -33,14 +34,14 @@ var Addressbar = new (function() {
       _box = _show.create("div");
       _box.id = "addressbar-box";
       _box.classList.add("element");
-      _box.innerHTML = "<span>Click here to enter an internet address...</span>";
+      _box.innerHTML = "<span class='info'>Click here to enter an internet address...</span>";
       _box.addEventListener("click", function() {
         _wrapper.classList.remove("show");
         _input.select();
       }, false);
       /*
       _info = _show.create("div");
-      _info.id = "info";
+      _info.id = "addressbar-info";
       _info.addEventListener("click", function() {
         //...
       }, false);
@@ -69,7 +70,35 @@ var Addressbar = new (function() {
         //... revert to previous URL
       }
       
-      _box.innerHTML = this.value.replace(/^((.+?):\/\/)?((.+?)\.)?(([a-zA-Z0-9\-_]+\.[a-zA-Z0-9\-_]+)?)(\/.*)?$/, "<span>$3</span>$5");
+      // parse URL
+      var urlParts = this.value.match(_reURL);
+      urlParts = {
+        protocol: urlParts[2],
+        subdomain: urlParts[5] && urlParts[4] && urlParts[4].slice(0, -urlParts[5].length) || undefined,
+        domain: urlParts[5] && urlParts[5]+urlParts[6] || urlParts[6],
+        querystring: urlParts[7]
+      };
+      
+      // format URL
+      var url = "";
+      switch (urlParts.protocol) {
+        case "hypercube":
+        case "about":
+          url = getURLFragment("protocol special", "Hypercube")
+            + getURLFragment("domain", urlParts.domain);
+          break;
+        default:
+          for (var i in urlParts) {
+            if (urlParts[i]) {
+              url += getURLFragment(i, urlParts[i]);
+            }
+          }
+      }
+      _box.innerHTML = url;
     });
+  }
+  
+  function getURLFragment(type, value) {
+    return "<span class='"+type+"'>"+value+"</span>";
   }
 })();

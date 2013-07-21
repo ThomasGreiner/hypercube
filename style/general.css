@@ -140,17 +140,30 @@ header>nav>canvas {
   line-height:23px;
 }
 
-#addressbar #addressbar-show #addressbar-box {
+#addressbar-box {
   padding-left: 51px;
 }
-#addressbar #addressbar-show #addressbar-box span {
+
+#addressbar-box span.info {
   color: #888;
 }
 
-#addressbar #addressbar-show #addressbar-info {
-  width: 22px;
-  height: 22px;
-  border: 1px solid black;
+#addressbar-box span.protocol {
+  display: none;
+}
+#addressbar-box span.protocol.special {
+  display: inline;
+  margin-right: 5px;
+  font-weight: bold;
+  color: rgb(0,0,100);
+}
+
+#addressbar-box span.subdomain {
+  color: #888;
+}
+
+#addressbar-box span.querystring {
+  display: none;
 }
 
 header>nav>#toolbar {

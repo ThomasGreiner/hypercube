@@ -10,6 +10,7 @@ var Renderer = new (function() {
   var _html;
   var _dominantColor = false;
   var _dominantColorBrightness = false;
+  var _reInternalURL = /^(hypercube|about):(\/\/)?(.+)$/;
   /**
    * 1 pageloadstart: page starts loading
    * 2 frameloadstart: frame starts loading
@@ -78,8 +79,12 @@ var Renderer = new (function() {
   }
   
   function navigateTo(url) {
-    if(url.indexOf("hypercube://") == 0) url = url.replace(/^hypercube:\/\/(.+)$/, "$1")
-    else if(url.indexOf("://") == -1) url = "http://"+url;
+    if(_reInternalURL.test(url)) {
+      // TODO: replace with http://www.greinr.com/apps/hypercube/internals/$3 as soon as it's available
+      url = url.replace(_reInternalURL, "http://www.greinr.com/$3");
+    } else if(url.indexOf("://") == -1) {
+      url = "http://"+url;
+    }
     _html.src = url;
     
     _dominantColor = false;
