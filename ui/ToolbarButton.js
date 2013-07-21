@@ -7,11 +7,11 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 var ToolbarButton = (function(html, type, data) {
-	var _div = html.create("div");
-	_div.classList.add("element");
-	_div.classList.add(type);
-	
-	var _icon = _div.create("img");
-	_icon.src = data.image;
-	//...
+  var _div = html.create("div");
+  _div.classList.add("element");
+  _div.classList.add(type);
+  
+  var _icon = _div.create("img");
+  _icon.src = data.image;
+  //...
 });

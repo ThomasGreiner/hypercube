@@ -7,21 +7,21 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 var History = new (function() {
-	var _arr = [];
+  var _arr = [];
 
-	this.__defineGetter__("length", function() {return _arr.length;});
-	
-	this.init = function() {
-		Addressbar.input.addEventListener("locationchange", function() {
-			_arr.push(Addressbar.input.value);
-		}, false);
-		_arr.push("hypercube://start.htm");
-	}
+  this.__defineGetter__("length", function() {return _arr.length;});
+  
+  this.init = function() {
+    Addressbar.input.addEventListener("locationchange", function() {
+      _arr.push(Addressbar.input.value);
+    }, false);
+    _arr.push("hypercube://start.htm");
+  }
 
-	this.back = function() {
-		if(_arr.length == 1) return;
+  this.back = function() {
+    if(_arr.length == 1) return;
 
-		_arr.pop();
-		Navigator.navigateTo(_arr.pop());
-	}
+    _arr.pop();
+    Navigator.navigateTo(_arr.pop());
+  }
 })();

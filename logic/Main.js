@@ -7,31 +7,31 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 var Main = new (function() {
-	this.init = function() {
-		//initialize DAL components
-		//Database.init();
-		
-		//initialize UI components
-		GET("close").addEventListener("click", function() {
-			window.close();
-		}, false);
-		Addressbar.init(GET("nav"));
-		Navigation.init(GET("nav"));
-		Toolbar.init(GET("toolbar"));
-		Header.init(GET("header_bg"));
-		Tabbar.init(GET("tabs_list"), GET("tabs_bg"));
-		//Taskbar.init(GET("tasks"));
-		Renderer.init(GET("browser"));
-		//Visualizer.init(GET("visualizer"));
-		History.init();
-		
-		//Visualizer.show();
-		
-		html2canvas(document.body, {
-			onrendered: function(canvas) {
-				document.body.appendChild(canvas);
-			}
-		});
-	}
+  this.init = function() {
+    //initialize DAL components
+    //Database.init();
+    
+    //initialize UI components
+    GET("close").addEventListener("click", function() {
+      window.close();
+    }, false);
+    Addressbar.init(GET("nav"));
+    Navigation.init(GET("nav"));
+    Toolbar.init(GET("toolbar"));
+    Header.init(GET("header_bg"));
+    Tabbar.init(GET("tabs_list"), GET("tabs_bg"));
+    //Taskbar.init(GET("tasks"));
+    Renderer.init(GET("browser"));
+    //Visualizer.init(GET("visualizer"));
+    History.init();
+    
+    //Visualizer.show();
+    
+    html2canvas(document.body, {
+      onrendered: function(canvas) {
+        document.body.appendChild(canvas);
+      }
+    });
+  }
 })();
 document.addEventListener("DOMContentLoaded", Main.init, false);

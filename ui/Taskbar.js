@@ -8,16 +8,16 @@
  */
 //TEST
 var tasks = {
-	"a": 1,
-	"b": 2,
-	"c": 3
+  "a": 1,
+  "b": 2,
+  "c": 3
 }
 
 var Taskbar = new (function() {
-	this.init = function(html) {
-		for(var i in tasks) {
-			var node = new Node(html, "small", "right");
-			//...
-		}
-	}
+  this.init = function(html) {
+    for(var i in tasks) {
+      var node = new Node(html, "small", "right");
+      //...
+    }
+  }
 })();

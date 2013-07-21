@@ -8,31 +8,31 @@
  */
 //TEST
 var elements = {
-	"a": {
-		type:	"extension",
-		data: {
-			image:	"DEMO/favicon.ico"
-		}
-	},
-	"b": {
-		type:	"extension",
-		data: {
-			image:	"DEMO/favicon_options.ico"
-		}
-	},
-	"c": {
-		type:	"extension",
-		data: {
-			image:	"DEMO/favicon_stored.ico"
-		}
-	}
+  "a": {
+    type: "extension",
+    data: {
+      image: "DEMO/favicon.ico"
+    }
+  },
+  "b": {
+    type: "extension",
+    data: {
+      image: "DEMO/favicon_options.ico"
+    }
+  },
+  "c": {
+    type: "extension",
+    data: {
+      image: "DEMO/favicon_stored.ico"
+    }
+  }
 }
 
 var Toolbar = new (function() {
-	this.init = function(html) {
-		for(var i in elements) {
-			var btn = new ToolbarButton(html, elements[i].type, elements[i].data);
-			//...
-		}
-	}
+  this.init = function(html) {
+    for(var i in elements) {
+      var btn = new ToolbarButton(html, elements[i].type, elements[i].data);
+      //...
+    }
+  }
 })();

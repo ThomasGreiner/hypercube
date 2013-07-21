@@ -7,9 +7,9 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 HTMLElement.prototype.create = function(type) {
-	var element = document.createElement(type);
-	this.appendChild(element);
-	return element;
+  var element = document.createElement(type);
+  this.appendChild(element);
+  return element;
 }
 
 var GET = function(id) {return document.getElementById(id);}

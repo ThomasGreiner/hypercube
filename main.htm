@@ -9,58 +9,58 @@
 -->
 <html>
 <head>
-	<title>Hypercube Browser</title>
-	<!-- stylesheets -->
-	<link rel="stylesheet" type="text/css" href="style/general.css">
-	<!-- scripts -->
-	<script src="script/HTMLElement.js"></script>
-	<!-- data access -->
-	<script src="dal/Database.js"></script>
-	<!-- abstract UI components -->
-	<script src="ui/Movable.js"></script>
-	<!-- UI components -->
-	<script src="lib/html2canvas.js"></script>
-	<script src="ui/BackgroundCreator.js"></script>
-	<script src="ui/Node.js"></script>
-	<script src="ui/Cluster.js"></script>
-	<script src="ui/ToolbarButton.js"></script>
-	<script src="ui/Navigation.js"></script>
-	<script src="ui/Addressbar.js"></script>
-	<script src="ui/Toolbar.js"></script>
-	<script src="ui/Tabbar.js"></script>
-	<script src="ui/Taskbar.js"></script>
-	<script src="ui/Header.js"></script>
-	<script src="ui/Visualizer.js"></script>
-	<!-- logic components -->
-	<script src="logic/Navigator.js"></script>
-	<script src="logic/Renderer.js"></script>
-	<script src="logic/History.js"></script>
-	<script src="logic/Main.js"></script>
+  <title>Hypercube Browser</title>
+  <!-- stylesheets -->
+  <link rel="stylesheet" type="text/css" href="style/general.css">
+  <!-- scripts -->
+  <script src="script/HTMLElement.js"></script>
+  <!-- data access -->
+  <script src="dal/Database.js"></script>
+  <!-- abstract UI components -->
+  <script src="ui/Movable.js"></script>
+  <!-- UI components -->
+  <script src="lib/html2canvas.js"></script>
+  <script src="ui/BackgroundCreator.js"></script>
+  <script src="ui/Node.js"></script>
+  <script src="ui/Cluster.js"></script>
+  <script src="ui/ToolbarButton.js"></script>
+  <script src="ui/Navigation.js"></script>
+  <script src="ui/Addressbar.js"></script>
+  <script src="ui/Toolbar.js"></script>
+  <script src="ui/Tabbar.js"></script>
+  <script src="ui/Taskbar.js"></script>
+  <script src="ui/Header.js"></script>
+  <script src="ui/Visualizer.js"></script>
+  <!-- logic components -->
+  <script src="logic/Navigator.js"></script>
+  <script src="logic/Renderer.js"></script>
+  <script src="logic/History.js"></script>
+  <script src="logic/Main.js"></script>
 </head>
 <body>
 
 <header>
-	<progress id="loadprogress" value="0" max="100"></progress>
-	<!-- navigation elements -->
-	<nav id="nav">
-		<div id="toolbar"></div>
-	</nav>
-	<canvas id="header_bg"></canvas>
-	<img id="close" src="res/images/button_close.png">
+  <progress id="loadprogress" value="0" max="100"></progress>
+  <!-- navigation elements -->
+  <nav id="nav">
+    <div id="toolbar"></div>
+  </nav>
+  <canvas id="header_bg"></canvas>
+  <img id="close" src="res/images/button_close.png">
 </header>
 
 <section id="tabs">
-	<canvas id="tabs_bg"></canvas>
-	<div id="tabs_list" class="list"></div>
+  <canvas id="tabs_bg"></canvas>
+  <div id="tabs_list" class="list"></div>
 </section>
 
 <section id="content">
-	<webview id="browser" src="https://www.google.com"></webview>
+  <webview id="browser" src="https://www.google.com"></webview>
 </section>
 
 <section id="visualizer" class="hidden">
-	<canvas id="visualizer_bg"></canvas>
-	<button id="hide_visualizer">close x</button>
+  <canvas id="visualizer_bg"></canvas>
+  <button id="hide_visualizer">close x</button>
 </section>
 
 <section id="tasks"></section>
