@@ -26,12 +26,6 @@ var Main = new (function() {
     History.init();
     
     //Visualizer.show();
-    
-    html2canvas(document.body, {
-      onrendered: function(canvas) {
-        document.body.appendChild(canvas);
-      }
-    });
   }
 })();
 document.addEventListener("DOMContentLoaded", Main.init, false);
