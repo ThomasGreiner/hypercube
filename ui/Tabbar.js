@@ -59,7 +59,7 @@ var Tabbar = new (function() {
 		}
 
 		_bg.init(bg);
+		
+		Addressbar.input.addEventListener("pageloadend", _bg.draw, false);
 	}
-
-	this.draw = _bg.draw;
 })();

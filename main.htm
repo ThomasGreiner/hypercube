@@ -19,16 +19,17 @@
 	<!-- abstract UI components -->
 	<script src="ui/Movable.js"></script>
 	<!-- UI components -->
+	<script src="lib/html2canvas.js"></script>
 	<script src="ui/BackgroundCreator.js"></script>
 	<script src="ui/Node.js"></script>
 	<script src="ui/Cluster.js"></script>
 	<script src="ui/ToolbarButton.js"></script>
-	<script src="ui/Header.js"></script>
 	<script src="ui/Navigation.js"></script>
 	<script src="ui/Addressbar.js"></script>
 	<script src="ui/Toolbar.js"></script>
 	<script src="ui/Tabbar.js"></script>
 	<script src="ui/Taskbar.js"></script>
+	<script src="ui/Header.js"></script>
 	<script src="ui/Visualizer.js"></script>
 	<!-- logic components -->
 	<script src="logic/Navigator.js"></script>
@@ -45,6 +46,7 @@
 		<div id="toolbar"></div>
 	</nav>
 	<canvas id="header_bg"></canvas>
+	<img id="close" src="res/images/button_close.png">
 </header>
 
 <section id="tabs">
@@ -53,7 +55,7 @@
 </section>
 
 <section id="content">
-	<iframe id="iframe" src="start.htm"></iframe>
+	<webview id="browser" src="https://www.google.com"></webview>
 </section>
 
 <section id="visualizer" class="hidden">
@@ -64,6 +66,5 @@
 <section id="tasks"></section>
 
 <footer></footer>
-
 </body>
 </html>

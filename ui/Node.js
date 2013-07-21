@@ -57,7 +57,8 @@ var Node = (function(id, name, url) {
 		_html.classList.add("node");
 		_html.classList.add(_size);
 		_html.classList.add(_align);
-		_html.style.backgroundImage = "url(chrome://favicon/"+_url+")";
+		// TODO: CSP doesn't allow the use of chrome://favicon - find alternative
+		//_html.style.backgroundImage = "url(chrome://favicon/"+_url+")";
 		if(!_isMovable) {
 			_html.addEventListener("mousedown", (function(ev) {
 				//ignore mouse buttons other than left one

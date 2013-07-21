@@ -10,7 +10,7 @@ Limitations and other important information about the prototype can be found in 
 ## Installation
 It runs as a packaged application in Google Chrome and therefore requires some additional steps.
 1. Checkout the project.
-2. Open Chrome and go to "chrome://chrome/extensions/".
+2. Open Chrome and go to "chrome://extensions/".
 3. Check "developer mode" and click on "Load unpacked extension...".
 4. Select the directory which contains Hypercube.
 5. Launch Hypercube by clicking on its icon on Chrome's New Tab Page.

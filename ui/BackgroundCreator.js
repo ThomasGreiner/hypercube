@@ -42,6 +42,9 @@ var BackgroundCreator = (function(_ROTATION, _CUT_HEIGHT, _OUTPUT_HEIGHT, _HAS_G
 	}
 	
 	this.draw = function() {
+		// TODO: chrome.tabs is not accessible for apps - find alternative
+		return;
+		
 		chrome.tabs.captureVisibleTab(null, {format:"png"}, function(dataUrl) {
 			_ctx.clearRect(0, 0, _iWidth, _iHeight);
 			

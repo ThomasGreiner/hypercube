@@ -10,8 +10,26 @@ var Renderer = new (function() {
 	var _html;
 	var _dominantColor = false;
 	var _dominantColorBrightness = false;
-	var _event = document.createEvent("Event");
-	_event.initEvent("pageloadend");
+	/**
+	 * 1 pageloadstart: page starts loading
+	 * 2 frameloadstart: frame starts loading
+	 * 3 frameloadend: frame loaded
+	 * 3a frameloadsuccess: frame successfully loaded
+	 * 3b frameloadabort: frame loading aborted
+	 * 4 pageloadend: page loaded
+	 */
+	var _events = {
+		pageloadstart: null,
+		pageloadend: null,
+		frameloadstart: null,
+		frameloadend: null,
+		frameloadabort: null,
+		frameloadsuccess: null
+	};
+	for (var i in _events) {
+		_events[i] = document.createEvent("Event");
+		_events[i].initEvent(i);
+	}
 	
 	this.__defineGetter__("dominantColor", function() {
 		return (_dominantColor) ? _dominantColor : [255, 255, 255, 1];
@@ -35,11 +53,26 @@ var Renderer = new (function() {
 	this.init = function(html) {
 		_html = html;
 		
-		_html.addEventListener("load", function(e) {
-			Addressbar.input.dispatchEvent(_event);
+		_html.addEventListener("loadstart", function(url, isTopLevel) {
+			Addressbar.input.dispatchEvent(_events["frameloadstart"]);
+		}, false);
+		
+		_html.addEventListener("loadcommit", function(url, isTopLevel) {
+			Addressbar.input.dispatchEvent(_events["frameloadsuccess"]);
+			Addressbar.input.dispatchEvent(_events["frameloadend"]);
+		}, false);
+		
+		_html.addEventListener("loadabort", function(url, isTopLevel, reason) {
+			Addressbar.input.dispatchEvent(_events["frameloadabort"]);
+			Addressbar.input.dispatchEvent(_events["frameloadend"]);
+		}, false);
+		
+		_html.addEventListener("loadstop", function() {
+			Addressbar.input.dispatchEvent(_events["pageloadend"]);
 		}, false);
 		
 		Addressbar.input.addEventListener("locationchange", function() {
+			Addressbar.input.dispatchEvent(_events["pageloadstart"]);
 			navigateTo(this.value);
 		}, false);
 	}
@@ -51,14 +84,5 @@ var Renderer = new (function() {
 		
 		_dominantColor = false;
 		_dominantColorBrightness = false;
-		
-		//<DEMO-CODE
-		/*
-		for(var i=0; i<=100; i++) {
-			setTimeout(Main.setProgress, i*50, i);
-		}
-		setTimeout(Main.setProgress, 5050, 0);
-		*/
-		//DEMO-CODE>
 	}
 })();

@@ -15,7 +15,7 @@ var Navigator = new (function() {
 		
 		Addressbar.input.dispatchEvent(_event);
 					/*
-					iframe: navigate to new URL
+					browser: navigate to new URL
 					Addressbar: change values where needed
 					loadingbar: update loadingbar
 					? Navigation: update Back-Button? (to loading animation?)
