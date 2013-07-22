@@ -261,7 +261,7 @@ var BackgroundCreator = (function(_ROTATION, _CUT_HEIGHT, _OUTPUT_HEIGHT, _HAS_G
       c[2] = c[2]*1;
       c[3] = 1;
       Renderer.dominantColor = c;
-      Navigation.draw(); //... should be called by event listener
+      Navigation.draw(); // TODO: should be called by event listener
     }
     
     //fill areas

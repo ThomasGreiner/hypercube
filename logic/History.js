@@ -8,14 +8,17 @@
  */
 var History = new (function() {
   var _arr = [];
+  var _event = document.createEvent("Event");
+  _event.initEvent("historychange");
 
   this.__defineGetter__("length", function() {return _arr.length;});
   
   this.init = function() {
     Addressbar.input.addEventListener("locationchange", function() {
       _arr.push(Addressbar.input.value);
+      Addressbar.input.dispatchEvent(_event);
     }, false);
-    _arr.push("hypercube://start.htm");
+    _arr.push("hypercube://start");
   }
 
   this.back = function() {

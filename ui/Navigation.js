@@ -49,6 +49,10 @@ var Navigation = new (function() {
     _canvas.addEventListener("mouseout", function() {
       Navigation.draw();
     }, false);
+    
+    Addressbar.input.addEventListener("historychange", function() {
+      drawArrow();
+    }, false);
   }
   
   this.draw = function() {
