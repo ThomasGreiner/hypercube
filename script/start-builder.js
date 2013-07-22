@@ -3,48 +3,48 @@ var svgPaths = [
   //background
   /*
   {
-    id:   "out_background_left",
-    start:  "m 150,50 0,300 -100,100 0,-300 z",
-    end:  "m 140,50 0,300 -100,100 0,-300 z"
+    id: "out_background_left",
+    start: "m 150,50 0,300 -100,100 0,-300 z",
+    end: "m 140,50 0,300 -100,100 0,-300 z"
   },
   {
-    id:   "out_background_bottom",
-    start:  "m 50,450 100,-100 300,0 -100,100 z",
-    end:  "m 50,460 100,-100 300,0 -100,100 z"
+    id: "out_background_bottom",
+    start: "m 50,450 100,-100 300,0 -100,100 z",
+    end: "m 50,460 100,-100 300,0 -100,100 z"
   },
   */
   //foreground
   {
-    id:   "out_foreground_top",
-    start:  "m 50,150 100,-100 300,0 -100,100 z",
-    end:  "m 50,140 100,-100 300,0 -100,100 z"
+    id: "out_foreground_top",
+    start: "m 50,150 100,-100 300,0 -100,100 z",
+    end: "m 50,140 100,-100 300,0 -100,100 z"
   },
   {
-    id:   "out_foreground_right",
-    start:  "m 450,50 0,300 -100,100 0,-300 z",
-    end:  "m 460,50 0,300 -100,100 0,-300 z"
+    id: "out_foreground_right",
+    start: "m 450,50 0,300 -100,100 0,-300 z",
+    end: "m 460,50 0,300 -100,100 0,-300 z"
   },
   //background (inner)
   {
-    id:   "in_background_left",
-    start:  "m 155,195 40,-40 0,150 -40,40 z",
-    end:  "m 145,195 40,-40 0,150 -40,40 z"
+    id: "in_background_left",
+    start: "m 155,195 40,-40 0,150 -40,40 z",
+    end: "m 145,195 40,-40 0,150 -40,40 z"
   },
   {
-    id:   "in_background_bottom",
-    start:  "m 155,345 40,-40 150,0 -40,40 z",
-    end:  "m 155,355 40,-40 150,0 -40,40 z"
+    id: "in_background_bottom",
+    start: "m 155,345 40,-40 150,0 -40,40 z",
+    end: "m 155,355 40,-40 150,0 -40,40 z"
   },
   //foreground (inner)
   {
-    id:   "in_foreground_top",
-    start:  "m 155,195 40,-40 150,0 -40,40 z",
-    end:  "m 155,185 40,-40 150,0 -40,40 z"
+    id: "in_foreground_top",
+    start: "m 155,195 40,-40 150,0 -40,40 z",
+    end: "m 155,185 40,-40 150,0 -40,40 z"
   },
   {
-    id:   "in_foreground_right",
-    start:  "m 305,195 40,-40 0,150 -40,40 z",
-    end:  "m 315,195 40,-40 0,150 -40,40 z"
+    id: "in_foreground_right",
+    start: "m 305,195 40,-40 0,150 -40,40 z",
+    end: "m 315,195 40,-40 0,150 -40,40 z"
   }
 ];
 
