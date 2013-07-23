@@ -18,7 +18,7 @@ var Cluster = (function(id, name) {
   this.render = function(html) {
     _html = html.create("nobr");
     _html.classList.add("cluster");
-    _html.style.backgroundImage = "url(res/images/logo.svg)";
+    _html.style.backgroundImage = "url(/res/images/logo.svg)";
     
     var name = _html.create("div");
     name.classList.add("cluster-title");

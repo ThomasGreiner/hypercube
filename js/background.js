@@ -7,7 +7,7 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 chrome.app.runtime.onLaunched.addListener(function() {
-  chrome.app.window.create("main.htm", {
+  chrome.app.window.create("/main.htm", {
     id: "main",
     type: "shell",
     frame: "none",
