@@ -6,33 +6,23 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
-//TEST
-var elements = {
-  "a": {
+var gui = require("nw.gui");
+
+var extensions = [
+  {
     type: "extension",
-    data: {
-      image: "res/images/extension1.ico"
-    }
-  },
-  "b": {
-    type: "extension",
-    data: {
-      image: "res/images/extension2.ico"
-    }
-  },
-  "c": {
-    type: "extension",
-    data: {
-      image: "res/images/extension3.ico"
+    image: "res/images/devtools.png",
+    onclick: function()
+    {
+      gui.Window.get().showDevTools();
     }
   }
-}
+];
 
 var Toolbar = new (function() {
   this.init = function(html) {
-    for(var i in elements) {
-      var btn = new ToolbarButton(html, elements[i].type, elements[i].data);
-      //...
-    }
+    extensions.forEach(function(extension) {
+      new ToolbarButton(html, extension);
+    });
   }
 })();
