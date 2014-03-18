@@ -7,15 +7,16 @@
  */
 
 var Header = new (function() {
-  var _win = chrome.app.window.current();
+  // TODO: find alternative
+  // var _win = chrome.app.window.current();
   var _bg = new BackgroundCreator(0, 46, 46 /*46*/, true, true);
   
   this.init = function(html) {
     _bg.init(html);
     
-    _win.onMaximized.addListener(checkMaximized);
-    _win.onFullscreened.addListener(checkMaximized);
-    _win.onRestored.addListener(checkMaximized);
+    // _win.onMaximized.addListener(checkMaximized);
+    // _win.onFullscreened.addListener(checkMaximized);
+    // _win.onRestored.addListener(checkMaximized);
     checkMaximized();
     
     initProgressbar();
@@ -61,10 +62,10 @@ var Header = new (function() {
   }
   
   function checkMaximized() {
-    if (_win.isMaximized()) {
-      document.documentElement.classList.add("maximized");
-    } else {
-      document.documentElement.classList.remove("maximized");
-    }
+    // if (_win.isMaximized()) {
+    //   document.documentElement.classList.add("maximized");
+    // } else {
+    //   document.documentElement.classList.remove("maximized");
+    // }
   }
 })();

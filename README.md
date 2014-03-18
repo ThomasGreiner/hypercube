@@ -5,14 +5,7 @@ Hypercube is the result of a [bachelor thesis titled "Conception and prototyping
 - a different approach to bookmark management
 - focus on navigation
 
-Limitations and other important information about the prototype can be found in the [bachelor thesis][bachelorthesis].
-
-## Installation
-It runs as a packaged application in Google Chrome and therefore requires some additional steps.
-1. Checkout the project.
-2. Open Chrome and go to "chrome://extensions/".
-3. Check "developer mode" and click on "Load unpacked extension...".
-4. Select the directory which contains Hypercube.
-5. Launch Hypercube by clicking on its icon on Chrome's New Tab Page.
+Limitations and other important information about the prototype can be found in the [bachelor thesis][bachelorthesis]. While previous versions were running as a Chrome Extension and a Chrome App, the most recent ones can run as a stand-alone application based on [node-webkit][nw].
 
 [bachelorthesis]: http://www.greinr.com/bachelorthesis/conception-and-prototyping-of-a-modern-browsers-user-interface
+[nw]: https://github.com/rogerwang/node-webkit

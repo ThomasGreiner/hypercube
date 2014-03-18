@@ -11,19 +11,19 @@ var elements = {
   "a": {
     type: "extension",
     data: {
-      image: "/res/images/extension1.ico"
+      image: "res/images/extension1.ico"
     }
   },
   "b": {
     type: "extension",
     data: {
-      image: "/res/images/extension2.ico"
+      image: "res/images/extension2.ico"
     }
   },
   "c": {
     type: "extension",
     data: {
-      image: "/res/images/extension3.ico"
+      image: "res/images/extension3.ico"
     }
   }
 }
