@@ -8,8 +8,8 @@
   "window": {
     "title": "Hypercube",
     "icon": "res/images/logo128.png",
-    // "toolbar": false,
-    // "frame": false,
+    "toolbar": false,
+    "frame": false,
     "position": "center",
     "width": 800,
     "height": 600,
