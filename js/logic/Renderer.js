@@ -10,7 +10,7 @@ var Renderer = new (function() {
   var _html;
   var _dominantColor = false;
   var _dominantColorBrightness = false;
-  var _reInternalURL = /^(hypercube|about):(\/\/)?(.+)$/;
+  var _reInternalURL = /^(hypercube|about):(\/\/)?(start)$/;
   /**
    * 1 pageloadstart: page starts loading
    * 2 frameloadstart: frame starts loading
@@ -85,8 +85,7 @@ var Renderer = new (function() {
   
   function navigateTo(url) {
     if(_reInternalURL.test(url)) {
-      // TODO: replace with "internal/$3"
-      url = url.replace(_reInternalURL, "http://www.greinr.com/$3");
+      url = url.replace(_reInternalURL, "internal/$3.htm");
     } else if(url.indexOf("://") == -1) {
       url = "http://"+url;
     }

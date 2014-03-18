@@ -25,7 +25,7 @@ var Main = new (function() {
     //Visualizer.init(GET("visualizer"));
     History.init();
     
-    // TODO: add Navigator.navigateTo("hypercube://start"); as soon as it's availabel
+    Navigator.navigateTo("hypercube://start");
     
     //Visualizer.show();
   }
