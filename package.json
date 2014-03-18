@@ -1,4 +1,37 @@
 {
-  "name": "Hypercube",
-  "main": "main.htm"
+  "name": "hypercube",
+  "version": "0.1",
+  "description": "Prototype implementation of a concept for a modern browser's user interface",
+  "main": "main.htm",
+  "user-agent": "Mozilla/5.0 (%osinfo) AppleWebKit/%webkit_ver node-webkit/%nwver %name/%ver",
+  // "inject-js-start": "...", // inject JS into content (e.g. to react to onscroll)
+  "window": {
+    "title": "Hypercube",
+    "icon": "res/images/logo128.png",
+    // "toolbar": false,
+    // "frame": false,
+    "position": "center",
+    "width": 800,
+    "height": 600,
+    "min_width": 500,
+    "min_height": 500
+  },
+  "maintainers": [
+    {
+      "name": "Thomas Greiner",
+      "web": "http://www.greinr.com/"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "Artistic License 2.0",
+      "url": "http://www.opensource.org/licenses/artistic-license-2.0"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/ThomasGreiner/hypercube.git"
+    }
+  ]
 }

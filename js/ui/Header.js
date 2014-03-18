@@ -6,18 +6,19 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
+var gui = require("nw.gui");
+
 var Header = new (function() {
-  // TODO: find alternative
-  // var _win = chrome.app.window.current();
   var _bg = new BackgroundCreator(0, 46, 46 /*46*/, true, true);
   
   this.init = function(html) {
     _bg.init(html);
     
-    // _win.onMaximized.addListener(checkMaximized);
-    // _win.onFullscreened.addListener(checkMaximized);
-    // _win.onRestored.addListener(checkMaximized);
-    checkMaximized();
+    var win = gui.Window.get();
+    win.on("maximize", setMaximized.bind(null, true));
+    win.on("unmaximize", setMaximized.bind(null, false));
+    win.on("enter-fullscreen", setMaximized.bind(null, true));
+    win.on("leave-fullscreen", setMaximized.bind(null, false));
     
     initProgressbar();
     
@@ -61,11 +62,7 @@ var Header = new (function() {
     }, false);
   }
   
-  function checkMaximized() {
-    // if (_win.isMaximized()) {
-    //   document.documentElement.classList.add("maximized");
-    // } else {
-    //   document.documentElement.classList.remove("maximized");
-    // }
+  function setMaximized(maximized) {
+    document.documentElement.classList.toggle("maximized", maximized);
   }
 })();

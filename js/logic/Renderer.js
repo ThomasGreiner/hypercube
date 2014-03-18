@@ -85,7 +85,7 @@ var Renderer = new (function() {
   
   function navigateTo(url) {
     if(_reInternalURL.test(url)) {
-      // TODO: replace with http://www.greinr.com/apps/hypercube/internals/$3 as soon as it's available
+      // TODO: replace with "internal/$3"
       url = url.replace(_reInternalURL, "http://www.greinr.com/$3");
     } else if(url.indexOf("://") == -1) {
       url = "http://"+url;
