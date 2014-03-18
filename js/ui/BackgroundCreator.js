@@ -6,6 +6,8 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
+var gui = require("nw.gui");
+
 /*
 BackgroundCreator
 - HTMLCanvasElement _canvas
@@ -42,10 +44,8 @@ var BackgroundCreator = (function(_ROTATION, _CUT_HEIGHT, _OUTPUT_HEIGHT, _HAS_G
   }
   
   this.draw = function() {
-    // TODO: find alternative
-    return;
-    
-    chrome.tabs.captureVisibleTab(null, {format:"png"}, function(dataUrl) {
+    var win = gui.Window.get();
+    win.capturePage(function(dataUrl) {
       _ctx.clearRect(0, 0, _iWidth, _iHeight);
       
       //rotate image -> normalize
@@ -97,14 +97,6 @@ var BackgroundCreator = (function(_ROTATION, _CUT_HEIGHT, _OUTPUT_HEIGHT, _HAS_G
         //visualizeMirror(data, width, ctxVis);
         visualizeAreas(data, width, ctxVis);
 
-        /*
-        document.body.innerText = "";
-        document.body.appendChild(cVis);
-        document.body.appendChild(document.createElement("br"));
-        document.body.appendChild(cNorm);
-        document.body.appendChild(document.createElement("br"));
-        */
-
         //rotate image -> denormalize
         x = 0;
         y = 0;
@@ -124,36 +116,10 @@ var BackgroundCreator = (function(_ROTATION, _CUT_HEIGHT, _OUTPUT_HEIGHT, _HAS_G
         _canvas.height = (_ROTATION%180) ? width : _OUTPUT_HEIGHT;
         _ctx.rotate((360-_ROTATION)*Math.PI/180);
         _ctx.drawImage(cVis, x, y);
-
-        //document.body.appendChild(_canvas);
       });
-
-      /*
-      var image = new Image();
-      image.src = dataUrl;
-      image.addEventListener("load", function() {
-        _iWidth = image.width;
-        _iHeight = image.height;
-        var width = _iWidth-_BORDER_LEFT-_BORDER_RIGHT;
-        var height = _CUT_HEIGHT;
-        
-        _canvas.width = _iWidth-_BORDER_LEFT-_BORDER_RIGHT;
-        _canvas.height = _OUTPUT_HEIGHT;
-        var canvas = document.createElement("canvas");
-        canvas.width = width;
-        canvas.height = height;
-        var ctx = canvas.getContext("2d");
-        ctx.drawImage(image, -_BORDER_LEFT, -_BORDER_TOP, _iWidth, _iHeight-_BORDER_TOP);
-        
-        var iData = ctx.getImageData(0, 0, width, height);
-        var data = iData.data;
-        //visualizeMirror(data, width);
-        visualizeAreas(data, width, _ctx);
-        
-        //document.body.appendChild(canvas);
-      });
-      //document.body.appendChild(image);
-      */
+    }, {
+      datatype: "datauri",
+      format: "png"
     });
   }
   
