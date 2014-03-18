@@ -54,6 +54,7 @@ var Renderer = new (function() {
   this.init = function(html) {
     _html = html;
     
+    /*
     _html.addEventListener("loadstart", function(url, isTopLevel) {
       Addressbar.input.dispatchEvent(_events["frameloadstart"]);
     }, false);
@@ -69,6 +70,10 @@ var Renderer = new (function() {
     }, false);
     
     _html.addEventListener("loadstop", function() {
+      Addressbar.input.dispatchEvent(_events["pageloadend"]);
+    }, false);
+    */
+    _html.addEventListener("load", function() {
       Addressbar.input.dispatchEvent(_events["pageloadend"]);
     }, false);
     
