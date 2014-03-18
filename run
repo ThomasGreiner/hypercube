@@ -1,0 +1,4 @@
+#!/bin/bash
+
+nw=~/programs/node-webkit/nw
+$nw .
