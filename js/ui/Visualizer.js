@@ -8,7 +8,7 @@
 
 var Visualizer = new (function() {
   var _html;
-  var _nodes;
+  var _nodes = [];
   var _connections;
   
   this.init = function(html) {

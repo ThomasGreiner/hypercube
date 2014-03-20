@@ -45,6 +45,6 @@ var Movable = (function(html) {
   
   document.body.addEventListener("mouseup", function() {
     _click = false;
-    Database.moveNode(_html.id, _html.offsetLeft, _html.offsetTop);
+    Database.moveNode(_html.id || this.id, _html.offsetLeft, _html.offsetTop);
   }, false);
 });

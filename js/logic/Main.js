@@ -9,7 +9,7 @@
 var Main = new (function() {
   this.init = function() {
     //initialize DAL components
-    //Database.init();
+    Database.init();
     
     //initialize UI components
     GET("close").addEventListener("click", function() {
@@ -22,12 +22,10 @@ var Main = new (function() {
     Tabbar.init(GET("tabs_list"), GET("tabs_bg"));
     //Taskbar.init(GET("tasks"));
     Renderer.init(GET("browser"));
-    //Visualizer.init(GET("visualizer"));
+    Visualizer.init(GET("visualizer"));
     History.init();
     
     Navigator.navigateTo("hypercube://start");
-    
-    //Visualizer.show();
   }
 })();
 document.addEventListener("DOMContentLoaded", Main.init, false);
