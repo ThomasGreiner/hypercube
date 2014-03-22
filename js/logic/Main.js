@@ -24,8 +24,6 @@ var Main = new (function() {
     Renderer.init(GET("browser"));
     Visualizer.init(GET("visualizer"));
     History.init();
-    
-    Navigator.navigateTo("hypercube://start");
   }
 })();
 document.addEventListener("DOMContentLoaded", Main.init, false);
