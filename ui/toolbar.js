@@ -11,7 +11,7 @@ var gui = require("nw.gui");
 var extensions = [
   {
     type: "extension",
-    image: "res/images/logo.svg",
+    image: "img/logo.svg",
     onclick: function()
     {
       Visualizer.show();
@@ -19,7 +19,7 @@ var extensions = [
   },
   {
     type: "extension",
-    image: "res/images/devtools.png",
+    image: "img/devtools.png",
     onclick: function()
     {
       gui.Window.get().showDevTools();
