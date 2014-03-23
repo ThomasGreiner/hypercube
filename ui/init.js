@@ -6,6 +6,9 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
+var gui = require("nw.gui");
+var database = require("./lib/database");
+
 HTMLElement.prototype.create = function(type) {
   var element = document.createElement(type);
   this.appendChild(element);
@@ -16,10 +19,7 @@ var GET = function(id) {return document.getElementById(id);}
 
 var Main = new (function() {
   this.init = function() {
-    //initialize DAL components
-    Database.init();
-    
-    //initialize UI components
+    database.init(gui.App.dataPath);
     GET("close").addEventListener("click", function() {
       window.close();
     }, false);

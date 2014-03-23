@@ -6,6 +6,7 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
+var database = require("./lib/database");
 var navigator = require("./lib/navigator");
 
 var Movable = (function(html) {
@@ -47,7 +48,7 @@ var Movable = (function(html) {
   
   document.body.addEventListener("mouseup", function() {
     _click = false;
-    Database.moveNode(_html.id || this.id, _html.offsetLeft, _html.offsetTop);
+    database.moveNode(_html.id || this.id, _html.offsetLeft, _html.offsetTop);
   }, false);
 });
 
@@ -173,7 +174,7 @@ var Cluster = (function(id, name) {
   var _html;
 
   this.getNodes = function(callback) {
-    Database.getNodes(_id, callback);
+    database.getNodes(_id, callback);
   }
   
   this.render = function(html) {

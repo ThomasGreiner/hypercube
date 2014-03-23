@@ -6,6 +6,8 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
+var database = require("./lib/database");
+
 var Visualizer = new (function() {
   var _html;
   var _nodes = [];
@@ -17,7 +19,7 @@ var Visualizer = new (function() {
     var hideBtn = GET("hide_visualizer");
     hideBtn.addEventListener("click", Visualizer.hide, false);
     
-    Database.getNodes(null, this.renderNodes);
+    database.getNodes(null, this.renderNodes);
 
     window.addEventListener("resize", this.renderConnections, false);
   }
@@ -39,7 +41,7 @@ var Visualizer = new (function() {
     determineConnections(node);
 
     var coords = node.getCoords();
-    Database.insertNode(null, node, {
+    database.insertNode(null, node, {
       x:  coords[0],
       y:  coords[1]
     });
