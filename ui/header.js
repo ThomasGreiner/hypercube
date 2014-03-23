@@ -10,9 +10,10 @@ var gui = require("nw.gui");
 var navigator = require("./lib/navigator");
 
 var Header = new (function() {
-  var _bg = new BackgroundCreator(0, 46, 46 /*46*/, true, true);
+  var _bg;
   
   this.init = function(html) {
+    _bg = new BackgroundCreator(0, 46, 46, true, true);
     _bg.init(html);
     
     var win = gui.Window.get();

@@ -76,7 +76,7 @@ var extensions = [
 ];
 
 var Tabbar = new (function() {
-  var _bg = new BackgroundCreator(90, 22, 22, false, false);
+  var _bg;
 
   this.init = function(html, bg) {
     for(var i in tabs) {
@@ -84,7 +84,8 @@ var Tabbar = new (function() {
       node.render(html, "small", "left", false);
       //...
     }
-
+    
+    _bg = new BackgroundCreator(90, 22, 22, false, false);
     _bg.init(bg);
     
     navigator.on("pageloadend", _bg.draw);
