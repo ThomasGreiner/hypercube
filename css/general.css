@@ -266,7 +266,7 @@ section#visualizer button#hide_visualizer {
   background: none;
 }
 section#visualizer button#hide_visualizer:hover {
-  background-image: -webkit-radial-gradient(center center, ellipse cover, #CCC, rgba(30,30,80,0));
+  background-image: -webkit-radial-gradient(center center, ellipse contain, #CCC, rgba(30,30,80,0));
 }
 
 section#tabs, section#tasks {
