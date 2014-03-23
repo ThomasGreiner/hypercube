@@ -25,7 +25,7 @@ var Header = new (function() {
   function initProgressbar() {
     var done = 0;
     var todo = 0;
-    var html = GET("loadprogress");
+    var html = GET("#loadprogress");
     
     navigator.on("pageloadstart", function() {
       done = 0;
