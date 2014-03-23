@@ -9,21 +9,16 @@
 var gui = require("nw.gui");
 var navigator = require("./lib/navigator");
 
-var BackgroundCreator = (function(_ROTATION, _CUT_HEIGHT, _OUTPUT_HEIGHT, _HAS_GRADIENT, _DEFINES_DOMINANT_COLOR) {
-  var _canvas;
-  var _ctx;
+var BackgroundCreator = (function(html, _ROTATION, _CUT_HEIGHT, _OUTPUT_HEIGHT, _HAS_GRADIENT, _DEFINES_DOMINANT_COLOR) {
+  var _canvas = html;
+  var _ctx = _canvas.getContext("2d");
   var _iWidth, _iHeight;
   var _BORDER_TOP = _borderTop = 57;
   var _BORDER_LEFT = _borderLeft = 11;
   var _BORDER_RIGHT = _borderRight = 11;
   var _BORDER_BOTTOM = _borderBottom = 11;
-
-  this.init = function(html) {
-    _canvas = html;
-    _ctx = _canvas.getContext("2d");
-    
-    navigator.on("pageloadend", draw);
-  }
+  
+  navigator.on("pageloadend", draw);
   
   function draw() {
     var win = gui.Window.get();
