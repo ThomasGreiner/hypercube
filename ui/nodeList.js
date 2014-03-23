@@ -6,6 +6,8 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
+var navigator = require("./lib/navigator");
+
 //TEST
 var tabs = [
   {
@@ -85,7 +87,7 @@ var Tabbar = new (function() {
 
     _bg.init(bg);
     
-    Addressbar.input.addEventListener("pageloadend", _bg.draw, false);
+    navigator.on("pageloadend", _bg.draw);
   }
 })();
 

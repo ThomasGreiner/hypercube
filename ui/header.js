@@ -7,6 +7,7 @@
  */
 
 var gui = require("nw.gui");
+var navigator = require("./lib/navigator");
 
 var Header = new (function() {
   var _bg = new BackgroundCreator(0, 46, 46 /*46*/, true, true);
@@ -22,44 +23,23 @@ var Header = new (function() {
     
     initProgressbar();
     
-    Addressbar.input.addEventListener("pageloadend", _bg.draw, false);
+    navigator.on("pageloadend", _bg.draw);
   }
   
   function initProgressbar() {
     var done = 0;
     var todo = 0;
     var html = GET("loadprogress");
-    Addressbar.input.addEventListener("locationchange", function() {
-      //...
-    }, false);
     
-    Addressbar.input.addEventListener("pageloadstart", function() {
+    navigator.on("pageloadstart", function() {
       done = 0;
       todo = 0;
       html.value = 0;
-    }, false);
+    });
     
-    Addressbar.input.addEventListener("frameloadstart", function() {
-      todo++;
-      html.value = done / todo * 100;
-    }, false);
-    
-    Addressbar.input.addEventListener("frameloadend", function() {
-      done++;
-      html.value = done / todo * 100;
-    }, false);
-    
-    Addressbar.input.addEventListener("frameloadsuccess", function() {
-      //...
-    }, false);
-    
-    Addressbar.input.addEventListener("frameloadabort", function() {
-      //...
-    }, false);
-    
-    Addressbar.input.addEventListener("pageloadend", function() {
+    navigator.on("pageloadend", function() {
       html.value = 0;
-    }, false);
+    });
   }
   
   function setMaximized(maximized) {

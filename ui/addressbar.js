@@ -6,14 +6,8 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
-/*
-Events
-  Addressbar.input:
-  - locationchange
-  - pageloadstart (not yet implemented)
-  - pageonloadfired (not yet implemented)
-  - pageloadend (not yet implemented)
-*/
+var navigator = require("./lib/navigator");
+
 var Addressbar = new (function() {
   var _wrapper;
   var _show;
@@ -56,7 +50,7 @@ var Addressbar = new (function() {
       switch(e.charCode) {
         //Enter
         case 13:
-          Navigator.navigateTo(_input.value);
+          navigator.navigateTo(_input.value);
           _wrapper.classList.add("show");
           break;
       }
@@ -65,13 +59,15 @@ var Addressbar = new (function() {
       _wrapper.classList.add("show");
       //... revert to previous URL
     }, false);
-    _input.addEventListener("locationchange", function() {
-      if(!this.value) {
+    navigator.on("locationchange", function(url) {
+      _input.value = url;
+      
+      if(!_input.value) {
         //... revert to previous URL
       }
       
       // parse URL
-      var urlParts = this.value.match(_reURL);
+      var urlParts = _input.value.match(_reURL);
       urlParts = {
         protocol: urlParts[2],
         subdomain: urlParts[5] && urlParts[4] && urlParts[4].slice(0, -urlParts[5].length) || undefined,

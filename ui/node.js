@@ -6,6 +6,8 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
+var navigator = require("./lib/navigator");
+
 var Movable = (function(html) {
   if(!html) return;
   
@@ -137,7 +139,7 @@ var Node = (function(id, name, url) {
         if(click) {
           click = false;
           //short-click
-          Navigator.navigateTo(_url);
+          navigator.navigateTo(_url);
         }
       }, false);
     }

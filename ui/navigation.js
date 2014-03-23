@@ -6,6 +6,8 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
+var navigator = require("./lib/navigator");
+
 var Navigation = new (function() {
   var _COLOR = [0, 0, 50, 1];
   var _canvas;
@@ -50,9 +52,9 @@ var Navigation = new (function() {
       Navigation.draw();
     }, false);
     
-    Addressbar.input.addEventListener("historychange", function() {
+    navigator.on("historychange", function() {
       drawArrow();
-    }, false);
+    });
   }
   
   this.draw = function() {
