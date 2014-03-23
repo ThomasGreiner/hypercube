@@ -22,7 +22,7 @@ var GET = function(id) {
 document.addEventListener("DOMContentLoaded", function() {
   database.init(gui.App.dataPath);
   GET("close").addEventListener("click", function() {
-    window.close();
+    gui.Window.get().close();
   }, false);
   Addressbar.init(GET("nav"));
   Navigation.init(GET("nav"));
