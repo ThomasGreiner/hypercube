@@ -31,7 +31,6 @@ var Main = new (function() {
     //Taskbar.init(GET("tasks"));
     Renderer.init(GET("browser"));
     Visualizer.init(GET("visualizer"));
-    History.init();
   }
 })();
 document.addEventListener("DOMContentLoaded", Main.init, false);

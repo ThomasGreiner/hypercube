@@ -6,6 +6,7 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
+var history = require("./lib/history");
 var navigator = require("./lib/navigator");
 
 var Navigation = new (function() {
@@ -23,7 +24,7 @@ var Navigation = new (function() {
     drawArrow();
 
     _canvas.addEventListener("click", function(e) {
-      History.back();
+      history.back();
     }, false);
     
     _canvas.addEventListener("mousemove", function(e) {
@@ -110,7 +111,7 @@ var Navigation = new (function() {
   }
   
   function drawArrow(fillStyle) {
-    if(History.length < 2) return;
+    if(history.length < 2) return;
 
     var color = Renderer.dominantColor;
     if(color[0] == 255 && color[1] == 255 && color[2] == 255) {
