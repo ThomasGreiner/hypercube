@@ -23,8 +23,6 @@ var Header = new (function() {
     win.on("leave-fullscreen", setMaximized.bind(null, false));
     
     initProgressbar();
-    
-    navigator.on("pageloadend", _bg.draw);
   }
   
   function initProgressbar() {

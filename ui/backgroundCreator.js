@@ -7,28 +7,8 @@
  */
 
 var gui = require("nw.gui");
+var navigator = require("./lib/navigator");
 
-/*
-BackgroundCreator
-- HTMLCanvasElement _canvas
-- CanvasRenderingContext2D _ctx
-- Number _iWidth
-- Number _iHeight
-- Number _BORDER_TOP
-- Number _borderTop
-- Number _BORDER_LEFT
-- Number _borderLeft
-- Number _BORDER_RIGHT
-- Number _borderRight
-- Number _BORDER_BOTTOM
-- Number _borderBottom
-+ BackgroundCreator(Number _ROTATION, Number _CUT_HEIGHT, Number _OUTPUT_HEIGHT, Number _HAS_GRADIENT)
-+ void init(HTMLElement html)
-+ void draw()
-- void visualizeMirror(ImageData data, Number width, CanvasRenderingContext2D outCtx)
-- void visualizeAreas(ImageData data, Number width, CanvasRenderingContext2D outCtx)
-- void boolean comparePixels(Array<Number> px1, Number i1, Array<Number> px2, Number i2)
-*/
 var BackgroundCreator = (function(_ROTATION, _CUT_HEIGHT, _OUTPUT_HEIGHT, _HAS_GRADIENT, _DEFINES_DOMINANT_COLOR) {
   var _canvas;
   var _ctx;
@@ -41,9 +21,11 @@ var BackgroundCreator = (function(_ROTATION, _CUT_HEIGHT, _OUTPUT_HEIGHT, _HAS_G
   this.init = function(html) {
     _canvas = html;
     _ctx = _canvas.getContext("2d");
+    
+    navigator.on("pageloadend", draw);
   }
   
-  this.draw = function() {
+  function draw() {
     var win = gui.Window.get();
     win.capturePage(function(dataUrl) {
       _ctx.clearRect(0, 0, _iWidth, _iHeight);

@@ -6,8 +6,6 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
-var navigator = require("./lib/navigator");
-
 //TEST
 var tabs = [
   {
@@ -87,8 +85,6 @@ var Tabbar = new (function() {
     
     _bg = new BackgroundCreator(90, 22, 22, false, false);
     _bg.init(bg);
-    
-    navigator.on("pageloadend", _bg.draw);
   }
 })();
 
