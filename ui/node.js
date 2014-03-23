@@ -6,6 +6,49 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
+var Movable = (function(html) {
+  if(!html) return;
+  
+  var _click = false;
+  var _html = html;
+  var _halfWidth;
+  var _halfHeight;
+
+  this.getCoords = function() {
+    return [
+      this.html.offsetLeft+this.html.offsetWidth/2,
+      this.html.offsetTop+this.html.offsetHeight/2
+    ];
+  }
+
+  this.startMove = function(ev) {
+    //ignore mouse buttons other than left one
+    if(ev && ev.which != 1) return;
+    
+    _click = true;
+    _halfWidth = _html.offsetWidth/2;
+    _halfHeight = _html.offsetHeight/2;
+  }
+  
+  _html.addEventListener("mousedown", this.startMove, false);
+  
+  document.body.addEventListener("mousemove", function(ev) {
+    //ignore mouse buttons other than left one
+    if(ev.which != 1) return;
+
+    if(_click) {
+      _html.style.top = (ev.clientY-11-_halfHeight)+"px";
+      _html.style.left = (ev.clientX-11-_halfWidth)+"px";
+      Visualizer.renderConnections();
+    }
+  }, false);
+  
+  document.body.addEventListener("mouseup", function() {
+    _click = false;
+    Database.moveNode(_html.id || this.id, _html.offsetLeft, _html.offsetTop);
+  }, false);
+});
+
 var Node = (function(id, name, url) {
   var _id = id;
   var _name = name;
@@ -121,3 +164,33 @@ var Node = (function(id, name, url) {
   }
 });
 Node.prototype = new Movable();
+
+var Cluster = (function(id, name) {
+  var _id = id;
+  var _name = name;
+  var _html;
+
+  this.getNodes = function(callback) {
+    Database.getNodes(_id, callback);
+  }
+  
+  this.render = function(html) {
+    _html = html.create("nobr");
+    _html.classList.add("cluster");
+    _html.style.backgroundImage = "url(img/logo.svg)";
+    
+    var name = _html.create("div");
+    name.classList.add("cluster-title");
+    name.innerText = _name;
+    
+    this.__proto__.constructor(_html);
+  }
+
+  this.toJSON = function() {
+    return {
+      id:   id,
+      name: name
+    };
+  }
+});
+Cluster.prototype = new Movable();

@@ -48,6 +48,31 @@ var tabs = [
   }
 ];
 
+var tasks = {
+  "a": 1,
+  "b": 2,
+  "c": 3
+};
+
+var extensions = [
+  {
+    type: "extension",
+    image: "img/logo.svg",
+    onclick: function()
+    {
+      Visualizer.show();
+    }
+  },
+  {
+    type: "extension",
+    image: "img/devtools.png",
+    onclick: function()
+    {
+      require("nw.gui").Window.get().showDevTools();
+    }
+  }
+];
+
 var Tabbar = new (function() {
   var _bg = new BackgroundCreator(90, 22, 22, false, false);
 
@@ -61,5 +86,22 @@ var Tabbar = new (function() {
     _bg.init(bg);
     
     Addressbar.input.addEventListener("pageloadend", _bg.draw, false);
+  }
+})();
+
+var Taskbar = new (function() {
+  this.init = function(html) {
+    for(var i in tasks) {
+      var node = new Node(html, "small", "right");
+      //...
+    }
+  }
+})();
+
+var Toolbar = new (function() {
+  this.init = function(html) {
+    extensions.forEach(function(extension) {
+      new ToolbarButton(html, extension);
+    });
   }
 })();
