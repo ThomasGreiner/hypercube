@@ -7,7 +7,7 @@
  */
 
 var database = require("./lib/database");
-var navigator = require("./lib/navigator");
+var nav = require("./lib/nav");
 
 var Movable = (function(html) {
   if(!html) return;
@@ -140,7 +140,7 @@ var Node = (function(id, name, url) {
         if(click) {
           click = false;
           //short-click
-          navigator.navigateTo(_url);
+          nav.navigateTo(_url);
         }
       }, false);
     }

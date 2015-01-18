@@ -7,7 +7,7 @@
  */
 
 var gui = require("nw.gui");
-var navigator = require("./lib/navigator");
+var nav = require("./lib/nav");
 
 var BackgroundCreator = (function(html, _ROTATION, _CUT_HEIGHT, _OUTPUT_HEIGHT, _HAS_GRADIENT, _DEFINES_DOMINANT_COLOR) {
   var _canvas = html;
@@ -18,7 +18,7 @@ var BackgroundCreator = (function(html, _ROTATION, _CUT_HEIGHT, _OUTPUT_HEIGHT, 
   var _BORDER_RIGHT = _borderRight = 11;
   var _BORDER_BOTTOM = _borderBottom = 11;
   
-  navigator.on("pageloadend", draw);
+  nav.on("pageloadend", draw);
   
   function draw() {
     var win = gui.Window.get();

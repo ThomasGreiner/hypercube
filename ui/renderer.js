@@ -6,7 +6,7 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
-var navigator = require("./lib/navigator");
+var nav = require("./lib/nav");
 
 var Renderer = new (function() {
   var _html;
@@ -37,11 +37,11 @@ var Renderer = new (function() {
     _html = html;
     
     _html.addEventListener("load", function() {
-      navigator.emit("pageloadend");
+      nav.emit("pageloadend");
     }, false);
     
-    navigator.on("locationchange", function(url) {
-      navigator.emit("pageloadstart");
+    nav.on("locationchange", function(url) {
+      nav.emit("pageloadstart");
       navigateTo(url);
     }, false);
   }

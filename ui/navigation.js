@@ -7,7 +7,7 @@
  */
 
 var history = require("./lib/history");
-var navigator = require("./lib/navigator");
+var nav = require("./lib/nav");
 
 var Navigation = new (function() {
   var _COLOR = [0, 0, 50, 1];
@@ -53,7 +53,7 @@ var Navigation = new (function() {
       Navigation.draw();
     }, false);
     
-    navigator.on("historychange", function() {
+    nav.on("historychange", function() {
       drawArrow();
     });
   }

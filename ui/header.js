@@ -7,7 +7,7 @@
  */
 
 var gui = require("nw.gui");
-var navigator = require("./lib/navigator");
+var nav = require("./lib/nav");
 
 var Header = new (function() {
   this.init = function(html) {
@@ -27,13 +27,13 @@ var Header = new (function() {
     var todo = 0;
     var html = GET("#loadprogress");
     
-    navigator.on("pageloadstart", function() {
+    nav.on("pageloadstart", function() {
       done = 0;
       todo = 0;
       html.value = 0;
     });
     
-    navigator.on("pageloadend", function() {
+    nav.on("pageloadend", function() {
       html.value = 0;
     });
   }

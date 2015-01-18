@@ -6,7 +6,7 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
-var navigator = require("./lib/navigator");
+var nav = require("./lib/nav");
 
 var Addressbar = new (function() {
   var _wrapper;
@@ -50,7 +50,7 @@ var Addressbar = new (function() {
       switch(e.charCode) {
         //Enter
         case 13:
-          navigator.navigateTo(_input.value);
+          nav.navigateTo(_input.value);
           _wrapper.classList.add("show");
           break;
       }
@@ -59,7 +59,7 @@ var Addressbar = new (function() {
       _wrapper.classList.add("show");
       //... revert to previous URL
     }, false);
-    navigator.on("locationchange", function(url) {
+    nav.on("locationchange", function(url) {
       _input.value = url;
       
       if(!_input.value) {
