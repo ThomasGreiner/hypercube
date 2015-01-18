@@ -1,5 +1,5 @@
 /* 
- * Copyright 2012-2014 Thomas Greiner <http://www.greinr.com>
+ * Copyright 2012-2015 Thomas Greiner <https://www.greinr.com>
  *
  * The contents of this file are subject to the Artistic License 2.0.
  * The full text can be found in the LICENSE.txt file and at
@@ -45,7 +45,7 @@ var Addressbar = new (function() {
     _input.id = "addressbar-input";
     _input.type = "text";
     _input.classList.add("element");
-    //_input.value = "http://www.greinr.com";
+    //_input.value = "https://www.greinr.com";
     _input.addEventListener("keypress", function(e) {
       switch(e.charCode) {
         //Enter

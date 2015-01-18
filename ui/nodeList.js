@@ -1,5 +1,5 @@
 /* 
- * Copyright 2012-2014 Thomas Greiner <http://www.greinr.com>
+ * Copyright 2012-2015 Thomas Greiner <https://www.greinr.com>
  *
  * The contents of this file are subject to the Artistic License 2.0.
  * The full text can be found in the LICENSE.txt file and at
@@ -14,7 +14,7 @@ var tabs = [
   },
   {
     title: "greinr.com",
-    url: "http://www.greinr.com"
+    url: "https://www.greinr.com"
   },
   /*
   {
