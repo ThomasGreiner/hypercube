@@ -10,6 +10,8 @@ var history = require("./lib/history");
 var nav = require("./lib/nav");
 
 var Navigation = new (function() {
+  var renderer = ui("renderer");
+  
   var _COLOR = [0, 0, 50, 1];
   var _canvas;
   var _ctx;
@@ -34,7 +36,7 @@ var Navigation = new (function() {
       
       //determine colors
       var rgb1 = [_COLOR[0], _COLOR[1], _COLOR[2], 0.1];
-      var color = Renderer.dominantColor;
+      var color = renderer.dominantColor;
       if(color[0] != 255 && color[1] != 255 && color[2] != 255) {
         rgb1 = [color[0], color[1], color[2], 0.01];
       }
@@ -72,7 +74,7 @@ var Navigation = new (function() {
     if(!fillStyle) {
       //determine colors
       var rgb1 = _COLOR;
-      var color = Renderer.dominantColor;
+      var color = renderer.dominantColor;
       if(color[0] != 255 && color[1] != 255 && color[2] != 255) {
         rgb1 = color;
       }
@@ -91,7 +93,7 @@ var Navigation = new (function() {
   }
   
   function getNegativeColor(color) {
-    var diff = (Renderer.dominantColorBrightness < 128) ? -30 : +30;
+    var diff = (renderer.dominantColorBrightness < 128) ? -30 : +30;
     return [
       getValidColorCode(color[0]+diff),
       getValidColorCode(color[1]+diff),
@@ -113,11 +115,11 @@ var Navigation = new (function() {
   function drawArrow(fillStyle) {
     if(history.length < 2) return;
 
-    var color = Renderer.dominantColor;
+    var color = renderer.dominantColor;
     if(color[0] == 255 && color[1] == 255 && color[2] == 255) {
       fillStyle = fillStyle || "#ffffff";
     }
-    _ctx.fillStyle = fillStyle || (Renderer.dominantColorBrightness < 128) ? "#ffffff" : "#000000";
+    _ctx.fillStyle = fillStyle || (renderer.dominantColorBrightness < 128) ? "#ffffff" : "#000000";
     _ctx.beginPath();
     _ctx.moveTo(43, 77);
     //top wing

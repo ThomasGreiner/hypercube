@@ -6,9 +6,9 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
-var nav = require("./lib/nav");
-
-var Renderer = (function() {
+ui.modules["renderer"] = function() {
+  var nav = require("./lib/nav");
+  
   var dominantColor = null;
   var dominantColorBrightness = null;
   var reInternalURL = /^(hypercube|about):(\/\/)?(start)$/;
@@ -19,28 +19,25 @@ var Renderer = (function() {
       + 0.068 * Math.pow(color[2], 2));
   }
   
-  var module = {
-    init: function(html) {
-      html.addEventListener("load", function() {
-        nav.emit("pageloadend");
-      }, false);
-      
-      nav.on("locationchange", function(url) {
-        nav.emit("pageloadstart");
-        
-        if (reInternalURL.test(url)) {
-          url = url.replace(reInternalURL, "internal/$3.htm");
-        } else if(url.indexOf("://") == -1) {
-          url = "http://" + url;
-        }
-        html.src = url;
-        
-        dominantColor = null;
-        dominantColorBrightness = null;
-      }, false);
-    }
-  };
+  GET("#browser").addEventListener("load", function() {
+    nav.emit("pageloadend");
+  }, false);
   
+  nav.on("locationchange", function(url) {
+    nav.emit("pageloadstart");
+    
+    if (reInternalURL.test(url)) {
+      url = url.replace(reInternalURL, "internal/$3.htm");
+    } else if(url.indexOf("://") == -1) {
+      url = "http://" + url;
+    }
+    GET("#browser").src = url;
+    
+    dominantColor = null;
+    dominantColorBrightness = null;
+  }, false);
+  
+  var module = Object.create(null);
   Object.defineProperties(module, {
     dominantColor: {
       get: function() {
@@ -57,4 +54,4 @@ var Renderer = (function() {
     }
   });
   return module;
-})();
+}

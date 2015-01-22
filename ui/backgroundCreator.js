@@ -203,7 +203,7 @@ var BackgroundCreator = (function(html, _ROTATION, _CUT_HEIGHT, _OUTPUT_HEIGHT, 
       c[1] = c[1]*1;
       c[2] = c[2]*1;
       c[3] = 1;
-      Renderer.dominantColor = c;
+      ui("renderer").dominantColor = c;
       Navigation.draw(); // TODO: should be called by event listener
     }
     
