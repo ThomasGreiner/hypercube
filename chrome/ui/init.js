@@ -7,7 +7,7 @@
  */
 
 var gui = require("nw.gui");
-var database = require("./lib/database");
+var database = require("../lib/database");
 
 document.addEventListener("DOMContentLoaded", function() {
   database.init(gui.App.dataPath);

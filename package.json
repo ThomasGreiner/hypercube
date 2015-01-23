@@ -2,11 +2,11 @@
   "name": "Hypercube",
   "version": "0.0.1",
   "description": "Prototype implementation of a concept for a modern browser's user interface",
-  "main": "main.htm",
+  "main": "chrome/main.htm",
   "user-agent": "Mozilla/5.0 (%osinfo) AppleWebKit/%webkit_ver node-webkit/%nwver %name/%ver",
   "window": {
     "title": "Hypercube",
-    "icon": "res/images/logo128.png",
+    "icon": "chrome/img/logo128.png",
     "toolbar": false,
     "frame": false,
     "position": "center",

@@ -7,7 +7,7 @@
  */
 
 var gui = require("nw.gui");
-var nav = require("./lib/nav");
+var nav = require("../lib/nav");
 
 var Header = new (function() {
   this.init = function(html) {

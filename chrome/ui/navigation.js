@@ -6,8 +6,8 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
-var history = require("./lib/history");
-var nav = require("./lib/nav");
+var history = require("../lib/history");
+var nav = require("../lib/nav");
 
 var Navigation = new (function() {
   var renderer = ui("renderer");

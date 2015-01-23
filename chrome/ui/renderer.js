@@ -7,7 +7,7 @@
  */
 
 ui.modules["renderer"] = function() {
-  var nav = require("./lib/nav");
+  var nav = require("../lib/nav");
   
   var dominantColor = null;
   var dominantColorBrightness = null;

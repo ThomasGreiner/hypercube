@@ -6,7 +6,7 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
-var database = require("./lib/database");
+var database = require("../lib/database");
 
 var Visualizer = new (function() {
   var _html;
@@ -42,8 +42,8 @@ var Visualizer = new (function() {
 
     var coords = node.getCoords();
     database.insertNode(null, node, {
-      x:  coords[0],
-      y:  coords[1]
+      x: coords[0],
+      y: coords[1]
     });
   }
 

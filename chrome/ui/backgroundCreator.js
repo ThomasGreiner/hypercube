@@ -8,7 +8,7 @@
 
 ui.modules["backgroundCreator"] = function() {
   var gui = require("nw.gui");
-  var nav = require("./lib/nav");
+  var nav = require("../lib/nav");
   
   // size of UI elements to determine content area
   var BORDER = 3;
