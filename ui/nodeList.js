@@ -83,7 +83,7 @@ var Tabbar = new (function() {
       //...
     }
     
-    new BackgroundCreator(bg, 90, 22, 22, false, false);
+    ui("backgroundCreator").create(bg, 90, 22, 22, false, false);
   }
 })();
 

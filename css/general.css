@@ -94,8 +94,8 @@ progress::-webkit-progress-value {
 }
 
 header>canvas {
-  width: 100%;
   height: 100%;
+  margin-left: 27px;
   z-index: 11;
 }
 
@@ -284,7 +284,7 @@ section#tabs .list, section#tasks .list {
 section#tabs>canvas {
   position: absolute;
   width: 22px;
-  height: 100%;
+  margin-top: 1px;
   z-index: -1;
 }
 
