@@ -1,3 +1,5 @@
+var isDevMode = false;
+
 HTMLElement.prototype.create = function(type) {
   var element = document.createElement(type);
   this.appendChild(element);

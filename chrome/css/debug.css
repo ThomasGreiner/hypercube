@@ -1,0 +1,19 @@
+:root {
+  -webkit-app-region: drag;
+}
+
+body {
+  background-color: lime;
+}
+
+img {
+  border: 1px solid;
+}
+
+#image-norm {
+  border-color: blue;
+}
+
+#image-vis {
+  border-color: red;
+}

@@ -89,6 +89,16 @@ chrome.modules["backgroundCreator"] = function() {
       visualize.bind(this)(data, width, ctxVis);
     }
     
+    if (isDevMode) {
+      gui.Window.open("debug.htm?" + cNorm.toDataURL() + "&" + cVis.toDataURL(), {
+        width: width + 30,
+        height: this._cutHeight * 2 + 30,
+        frame: false,
+        toolbar: false,
+        "always-on-top": true
+      });
+    }
+    
     //rotate image -> denormalize
     x = 0;
     y = 0;
