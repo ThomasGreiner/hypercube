@@ -26,4 +26,6 @@ chrome.modules[""] = Object.create(null);
 
 document.addEventListener("DOMContentLoaded", function() {
   chrome("addressbar");
+  chrome("header");
+  chrome("navigation");
 }, false);

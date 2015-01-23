@@ -14,9 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
   GET("#close").addEventListener("click", function() {
     gui.Window.get().close();
   }, false);
-  Navigation.init(GET("#nav"));
   Toolbar.init(GET("#toolbar"));
-  Header.init(GET("#header_bg"));
   Tabbar.init(GET("#tabs_list"), GET("#tabs_bg"));
   Visualizer.init(GET("#visualizer"));
 }, false);

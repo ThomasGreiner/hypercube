@@ -227,7 +227,7 @@ chrome.modules["backgroundCreator"] = function() {
       c[2] = c[2] >> 0;
       c[3] = 1;
       chrome("renderer").dominantColor = c;
-      Navigation.draw(); // TODO: should be called by event listener
+      chrome("navigation").draw(); // TODO: should be called by event listener (no need to expose draw() anymore then)
     }
     
     //fill areas
