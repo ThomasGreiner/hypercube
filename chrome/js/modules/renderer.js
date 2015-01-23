@@ -6,7 +6,7 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
-ui.modules["renderer"] = function() {
+chrome.modules["renderer"] = function() {
   var nav = require("../lib/nav");
   
   var dominantColor = null;

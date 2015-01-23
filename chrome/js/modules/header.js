@@ -11,7 +11,7 @@ var nav = require("../lib/nav");
 
 var Header = new (function() {
   this.init = function(html) {
-    ui("backgroundCreator").create(html, 0, 46, 46, true, true);
+    chrome("backgroundCreator").create(html, 0, 46, 46, true, true);
     
     var win = gui.Window.get();
     win.on("maximize", setMaximized.bind(null, true));

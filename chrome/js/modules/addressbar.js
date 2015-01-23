@@ -6,7 +6,7 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
-ui.modules["addressbar"] = function() {
+chrome.modules["addressbar"] = function() {
   var nav = require("../lib/nav");
   
   var reURL = /^(([^:]+):(\/\/)?)?(([^\.]+\.)*)([^\/\?]+)(\/.*)?$/;

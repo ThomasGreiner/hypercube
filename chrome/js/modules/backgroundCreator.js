@@ -6,7 +6,7 @@
  * http://www.opensource.org/licenses/artistic-license-2.0
  */
 
-ui.modules["backgroundCreator"] = function() {
+chrome.modules["backgroundCreator"] = function() {
   var gui = require("nw.gui");
   var nav = require("../lib/nav");
   
@@ -216,7 +216,7 @@ ui.modules["backgroundCreator"] = function() {
       c[1] = c[1] >> 0;
       c[2] = c[2] >> 0;
       c[3] = 1;
-      ui("renderer").dominantColor = c;
+      chrome("renderer").dominantColor = c;
       Navigation.draw(); // TODO: should be called by event listener
     }
     

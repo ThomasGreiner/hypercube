@@ -10,7 +10,7 @@ var history = require("../lib/history");
 var nav = require("../lib/nav");
 
 var Navigation = new (function() {
-  var renderer = ui("renderer");
+  var renderer = chrome("renderer");
   
   var _COLOR = [0, 0, 50, 1];
   var _canvas;
