@@ -27,7 +27,7 @@ chrome.modules["renderer"] = function() {
     nav.emit("pageloadstart");
     
     if (reInternalURL.test(url)) {
-      url = url.replace(reInternalURL, "internal/$3.htm");
+      url = url.replace(reInternalURL, "$3.htm");
     } else if(url.indexOf("://") == -1) {
       url = "http://" + url;
     }
