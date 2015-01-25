@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
   var images = location.search.substr(1).split("&");
-  document.getElementById("image-norm").src = images[0];
-  document.getElementById("image-vis").src = images[1];
+  images.forEach(function(image) {
+    var img = document.createElement("img");
+    img.src = image;
+    document.body.appendChild(img);
+  });
 }, false);

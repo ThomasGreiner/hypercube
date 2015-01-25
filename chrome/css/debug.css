@@ -10,10 +10,10 @@ img {
   border: 1px solid;
 }
 
-#image-norm {
+img:nth-child(1) {
   border-color: blue;
 }
 
-#image-vis {
+img:nth-child(2) {
   border-color: red;
 }
