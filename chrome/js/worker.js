@@ -24,7 +24,7 @@ onmessage = function(ev) {
           transform = transformAreas;
           break;
         case "mirror":
-          transform = transforMirror;
+          transform = transformMirror;
           break;
       }
       
@@ -52,12 +52,14 @@ function transformNoop(data) {
 function transformMirror(config, params) {
   var cutHeight = config.cutHeight;
   var data = params.data;
-  var width = params.width;
-  var outData = new Uint8ClampedArray(data.length);
+  var dataLen = data.length;
+  var width = params.width * 4;
   
-  for (var i = 0; i < data.length; i += 4) {
-    var line = cutHeight - ((i / (width * 4)) >>> 0) - 1;
-    var ii = (i % (width * 4)) + (width * 4 * line);
+  var outData = new Uint8ClampedArray(dataLen);
+  
+  for (var i = 0; i < dataLen; i += 4) {
+    var line = cutHeight - ((i / width) >>> 0) - 1;
+    var ii = (i % width) + (width * line);
     
     outData[ii] = data[i];
     outData[ii + 1] = data[i + 1];
