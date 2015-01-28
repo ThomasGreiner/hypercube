@@ -9,6 +9,8 @@
 var database = require("../lib/database");
 var nav = require("../lib/nav");
 
+var visualizer = chrome("visualizer");
+
 var Movable = (function(html) {
   if(!html) return;
   
@@ -42,7 +44,7 @@ var Movable = (function(html) {
     if(_click) {
       _html.style.top = (ev.clientY-11-_halfHeight)+"px";
       _html.style.left = (ev.clientX-11-_halfWidth)+"px";
-      Visualizer.renderConnections();
+      visualizer.renderConnections();
     }
   }, false);
   
@@ -118,7 +120,7 @@ var Node = (function(id, name, url) {
         setTimeout((function() {
           if(click) {
             click = false;
-            Visualizer.show();
+            visualizer.show();
           }
         }).bind(this), 400);
         click = true;
@@ -129,8 +131,8 @@ var Node = (function(id, name, url) {
           this.align = "center";
           this.isMovable = true;
           this.startMove();
-          Visualizer.addNode(this);
-          Visualizer.show();
+          visualizer.addNode(this);
+          visualizer.show();
         }
       }).bind(this), false);
       _html.addEventListener("mouseup", function(ev) {

@@ -60,7 +60,7 @@ var extensions = [
     image: "img/logo.svg",
     onclick: function()
     {
-      Visualizer.show();
+      chrome("visualizer").show();
     }
   },
   {
